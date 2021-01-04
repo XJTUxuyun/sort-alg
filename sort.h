@@ -28,4 +28,8 @@ DATA_TYPE_MAP(SORT_ALG_DECLARE_GEN2)
 
 #undef SORT_ALG_MAP
 
+#ifndef UNDEF_DATA_TYPE_MAP_FLAG
+#undef DATA_TYPE_MAP
+#endif
+
 #endif

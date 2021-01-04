@@ -1,3 +1,4 @@
+#define UNDEF_DATA_TYPE_MAP_FLAG
 #include "sort.h"
 
 // for bubble
@@ -114,7 +115,19 @@ DATA_TYPE_MAP(SORT_ALG_GEN)
 
 // for merger
 #define SORT_ALG_GEN(type)                                      \
-    ;
+    int sort_alg_merge_##type(type *data, int size)             \
+    {                                                           \
+        if (!data || size<=1)                                   \
+        {                                                       \
+            return -1;                                          \
+        }                                                       \
+        int middle = size / 2;                                  \
+        return 0;                                               \
+    }
+
 DATA_TYPE_MAP(SORT_ALG_GEN)
 #undef SORT_ALG_GEN
 
+// undefine DATA_TYPE_MAP
+#undef DATA_TYPE_MAP
+#undef UNDEF_DATA_TYPE_MAP_FLAG
